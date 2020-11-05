@@ -42,37 +42,37 @@ export default function MainListItems() {
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             {/* <Link to="/home" style={{ textDecoration: 'none', color: 'white' }}> */}
-              <ListItem button>
+              <ListItem button style={{backgroundColor:'#4d516831'}}>
                 <ListItemIcon>
                     <HomeIcon style={{ color: 'white' }} size="small"/>
                 </ListItemIcon>
-                <ListItemText primary="Home" />
+                <ListItemText primary="Home" style={{ color: 'white' }} />
               </ListItem>
             {/* </Link> */}
             <Divider style={{backgroundColor:'#353d62'}}/>
 
               {' '}
-              <ListItem button>
+              <ListItem button style={{backgroundColor:'#4d516831'}}>
                 <ListItemIcon>
                     <LibraryBooksIcon style={{ color: 'white' }}/>
                 </ListItemIcon>
-                <ListItemText primary="Projects" />
+                <ListItemText primary="Projects" style={{ color: 'white' }}/>
               </ListItem>
               <Divider style={{backgroundColor:'#353d62'}}/>
 
-              <ListItem button>
+              <ListItem button style={{backgroundColor:'#4d516831'}}>
                 <ListItemIcon>
                     <GradeIcon style={{ color: 'white' }}/>
                 </ListItemIcon>
-                <ListItemText primary="Opportunities" />
+                <ListItemText primary="Opportunities" style={{ color: 'white' }}/>
               </ListItem>
               <Divider style={{backgroundColor:'#353d62'}}/>
 
-              <ListItem button>
-                <ListItemIcon>
+              <ListItem button style={{backgroundColor:'#4d516831'}}>
+                <ListItemIcon >
                     <NoteAddIcon style={{ color: 'white' }}/>
                 </ListItemIcon>
-                <ListItemText primary="Proposals" />
+                <ListItemText primary="Proposals" style={{ color: 'white' }}/>
               </ListItem>
           </List>
         </Collapse>

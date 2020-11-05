@@ -117,6 +117,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     overflow: 'auto',
     flexDirection: 'column',
+    borderRadius:'10px',
   },
   fixedHeight: {
     height: 240,
@@ -223,7 +224,7 @@ export default function Dashboard() {
         </div>
         <Divider style={{backgroundColor:'#353d62'}}/>
         {/* <List>{mainListItems}</List> */}
-        <MainListItems />
+        <MainListItems/>
         <Divider style={{backgroundColor:'#353d62'}}/>
       </Drawer>
       <main className={classes.content}>
