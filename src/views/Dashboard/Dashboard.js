@@ -6,7 +6,6 @@ import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -18,15 +17,19 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './listItems';
+import MainListItems from './MainListItems';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import './dashboard.styles.scss'
 
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://www.prithvi.ai/">
+        Prithvi.AI
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -119,7 +122,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+    const [auth, setAuth] = React.useState(true);
+    
   const classes = useStyles();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open1 = Boolean(anchorEl);
+
+
+  const handleMenu = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
+
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -152,6 +172,37 @@ export default function Dashboard() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          {auth && (
+            <div>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="white"
+              >
+                <AccountCircle fontSize="medium" style={{color:'#fff'}} />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open1}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -165,11 +216,12 @@ export default function Dashboard() {
         <div className={classes.toolbarIcon}>
            <div><h3>Prithvi Platform</h3></div>
           <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon style={{color:'#fff'}}/>
+            <ChevronLeftIcon style={{color:'#fff',margin:'0'}}/>
           </IconButton>
         </div>
         <Divider style={{backgroundColor:'#353d62'}}/>
-        <List>{mainListItems}</List>
+        {/* <List>{mainListItems}</List> */}
+        <MainListItems />
         <Divider style={{backgroundColor:'#353d62'}}/>
       </Drawer>
       <main className={classes.content}>
