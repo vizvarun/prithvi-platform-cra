@@ -59,6 +59,8 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
+     
+
     }),
   },
   appBarShift: {
@@ -152,7 +154,7 @@ export default function Dashboard() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)} style={{backgroundColor:'#20253b'}}>
+      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)} style={{backgroundColor:'#fff'}}>
         <Toolbar className={classes.toolbar}>
          
           <IconButton
@@ -162,14 +164,14 @@ export default function Dashboard() {
             onClick={handleDrawerOpen}
             className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
           >
-            <MenuIcon />
+            <MenuIcon style={{color:'black'}}/>
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             {/* Dashboard */}
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
+              <NotificationsIcon style={{color:'black'}}/>
             </Badge>
           </IconButton>
           {auth && (
@@ -181,7 +183,7 @@ export default function Dashboard() {
                 onClick={handleMenu}
                 color="white"
               >
-                <AccountCircle fontSize="medium" style={{color:'#fff'}} />
+                <AccountCircle fontSize="medium" style={{color:'black'}} />
               </IconButton>
               <Menu
                 id="menu-appbar"
