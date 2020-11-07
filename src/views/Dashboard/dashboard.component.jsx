@@ -20,10 +20,16 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import "./dashboard.styles.scss";
 import { Bell, User, Menu as MenuIcon } from "react-feather";
+import logo from "../../assets/logo.png";
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography
+      variant="body2"
+      color="textSecondary"
+      align="center"
+      className="copyright_text"
+    >
       {"Copyright © "}
       <Link color="inherit" href="https://www.prithvi.ai/">
         Prithvi.AI
@@ -46,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   toolbarIcon: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     padding: "0 8px",
     ...theme.mixins.toolbar,
   },
@@ -221,7 +227,7 @@ export default function Dashboard() {
       >
         <div className={classes.toolbarIcon}>
           <div>
-            <h3>Prithvi Platform</h3>
+            <img src={logo} alt="logo" />
           </div>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon style={{ color: "#fff", margin: "0" }} />
