@@ -246,7 +246,7 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={12} lg={12}>
-              <Paper className={fixedHeightPaper}>
+              <Paper className={fixedHeightPaper} style={{ height: 'auto' }}>
                 <Switch>
                   {routes.map((prop, key) => (
                     <Route
