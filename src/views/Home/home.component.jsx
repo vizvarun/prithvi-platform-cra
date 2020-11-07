@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import ProjectCard from "../../components/project-card.component.";
 import OpportunitiesCard from "../../components/opportunities-card.component";
 import PendingProposalCard from "../../components/pending-proposal-card.component";
+import sort from "../../assets/sort-icon.svg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +53,10 @@ const useStyles = makeStyles((theme) => ({
   inputRoot: {
     color: "inherit",
   },
+  customBadge: {
+    backgroundColor: "#F07C37",
+    color: "white",
+  },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -78,7 +83,7 @@ export default function Home() {
           <span>
             <Badge
               badgeContent={5}
-              color="secondary"
+              classes={{ badge: classes.customBadge }}
               className="project-badge"
             />
           </span>
@@ -101,7 +106,7 @@ export default function Home() {
               />
             </div>
             <div className="sort-icon">
-              <MenuIcon />
+              <img src={sort} alt="sort-icon" />
             </div>
           </div>
         </div>

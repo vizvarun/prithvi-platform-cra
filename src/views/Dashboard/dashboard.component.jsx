@@ -21,6 +21,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import "./dashboard.styles.scss";
 import { Bell, User, Menu as MenuIcon } from "react-feather";
+import bell from "../../assets/bell.svg";
+import user from "../../assets/user.svg";
 import logo from "../../assets/logo.png";
 import routes from "../../routes";
 
@@ -122,6 +124,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     borderRadius: "10px",
   },
+  customBadge: {
+    backgroundColor: "#F07C37",
+    color: "white",
+  },
   fixedHeight: {
     height: 240,
   },
@@ -182,9 +188,9 @@ export default function Dashboard() {
           >
             {/* Dashboard */}
           </Typography>
-          <IconButton color="inherit" style={{ marginRight: "10px" }}>
-            <Badge badgeContent={4} color="secondary">
-              <Bell style={{ color: "black" }} size={22} />
+          <IconButton color="inherit">
+            <Badge badgeContent={4} classes={{ badge: classes.customBadge }}>
+              <img src={bell} alt="bell" />
             </Badge>
           </IconButton>
           {auth && (
@@ -196,7 +202,7 @@ export default function Dashboard() {
                 onClick={handleMenu}
                 color="white"
               >
-                <User fontSize="medium" size={22} style={{ color: "black" }} />
+                <img src={user} alt="user" />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -246,7 +252,7 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={12} lg={12}>
-              <Paper className={fixedHeightPaper} style={{ height: 'auto' }}>
+              <Paper className={fixedHeightPaper} style={{ height: "auto" }}>
                 <Switch>
                   {routes.map((prop, key) => (
                     <Route
