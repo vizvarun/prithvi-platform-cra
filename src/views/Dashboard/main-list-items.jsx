@@ -20,6 +20,7 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import List from "@material-ui/core/List";
+import { Link } from "react-router-dom";
 
 export default function MainListItems() {
   const [open, setOpen] = React.useState(false);
@@ -42,38 +43,53 @@ export default function MainListItems() {
 
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {/* <Link to="/home" style={{ textDecoration: 'none', color: 'white' }}> */}
-            <ListItem button style={{ backgroundColor: "#4d516831" }}>
-              <ListItemIcon>
-                <Home style={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText primary="Home" style={{ color: "white" }} />
-            </ListItem>
-            {/* </Link> */}
-            <Divider style={{ backgroundColor: "#353d62" }} />{" "}
-            <ListItem button style={{ backgroundColor: "#4d516831" }}>
-              <ListItemIcon>
-                <Feather style={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText primary="Projects" style={{ color: "white" }} />
-            </ListItem>
+            <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
+              <ListItem button style={{ backgroundColor: "#4d516831" }}>
+                <ListItemIcon>
+                  <Home style={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText primary="Home" style={{ color: "white" }} />
+              </ListItem>
+            </Link>
             <Divider style={{ backgroundColor: "#353d62" }} />
-            <ListItem button style={{ backgroundColor: "#4d516831" }}>
-              <ListItemIcon>
-                <Star style={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Opportunities"
-                style={{ color: "white" }}
-              />
-            </ListItem>
+            <Link
+              to="/projects"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItem button style={{ backgroundColor: "#4d516831" }}>
+                <ListItemIcon>
+                  <Feather style={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText primary="Projects" style={{ color: "white" }} />
+              </ListItem>
+            </Link>
             <Divider style={{ backgroundColor: "#353d62" }} />
-            <ListItem button style={{ backgroundColor: "#4d516831" }}>
-              <ListItemIcon>
-                <FilePlus style={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText primary="Proposals" style={{ color: "white" }} />
-            </ListItem>
+            <Link
+              to="/opportunities"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItem button style={{ backgroundColor: "#4d516831" }}>
+                <ListItemIcon>
+                  <Star style={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Opportunities"
+                  style={{ color: "white" }}
+                />
+              </ListItem>
+            </Link>
+            <Divider style={{ backgroundColor: "#353d62" }} />
+            <Link
+              to="/proposals"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItem button style={{ backgroundColor: "#4d516831" }}>
+                <ListItemIcon>
+                  <FilePlus style={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText primary="Proposals" style={{ color: "white" }} />
+              </ListItem>
+            </Link>
           </List>
         </Collapse>
         <Divider style={{ backgroundColor: "#353d62" }} />

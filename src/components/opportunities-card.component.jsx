@@ -6,9 +6,12 @@ import CardContent from "@material-ui/core/CardContent";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: "30vw",
+    minWidth: "35vw",
+    height: "20vh",
     borderRadius: "10px",
     boxShadow: "0 2px 4px 0 rgba(0,0,0,.1)",
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
     fontSize: 14,
@@ -45,12 +48,16 @@ export default function OpportunitiesCard() {
           className={classes.root}
           variant="outlined"
           key={data.id}
-          style={{ marginBottom: "20px" }}
+          style={{
+            marginBottom: "20px",
+            display: "flex",
+            justifyContent: "flex-start",
+          }}
         >
           <CardContent>
             <div className="project-header-col" style={{ lineHeight: "50%" }}>
-              <h5>Problem {data.problemCount}</h5>
-              <h5>Description : {data.desc}</h5>
+              <p>Problem {data.problemCount}</p>
+              <p>Description : {data.desc}</p>
             </div>
           </CardContent>
         </Card>

@@ -1,6 +1,5 @@
 import React from "react";
 import "./home.styles.scss";
-import MenuIcon from "@material-ui/icons/Menu";
 import Badge from "@material-ui/core/Badge";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
@@ -78,16 +77,18 @@ export default function Home() {
   return (
     <>
       <div className="project-main-head">
-        <div className="project-title">
-          <span>Projects</span>
-          <span>
-            <Badge
-              badgeContent={5}
-              classes={{ badge: classes.customBadge }}
-              className="project-badge"
-            />
-          </span>
-        </div>
+        <Link to="/projects" style={{ textDecoration: "none", color: "black" }}>
+          <div className="project-title">
+            <span>Projects</span>
+            <span>
+              <Badge
+                badgeContent={5}
+                classes={{ badge: classes.customBadge }}
+                className="project-badge"
+              />
+            </span>
+          </div>
+        </Link>
 
         <div className="flex-row">
           <div className="search-bar">
@@ -120,7 +121,12 @@ export default function Home() {
       <div className="project-list">
         <div className="project-card">
           <div className="hero-title hero-row">
-            <span>Opportunities</span>
+            <Link
+              to="/opportunities"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <span>Opportunities</span>
+            </Link>
             <Link to="/opportunities">
               <div className="see-more">
                 <p>See More</p>
@@ -130,7 +136,7 @@ export default function Home() {
                     borderRadius: "50%",
                     width: "15px",
                     height: "15px",
-                    backgroundColor: "teal",
+                    backgroundColor: "#F07C37",
                   }}
                 />
               </div>
@@ -140,7 +146,12 @@ export default function Home() {
         </div>
         <div className="project-card" style={{ marginLeft: "30px" }}>
           <div className="hero-title hero-row">
-            <span>Pending Proposals</span>
+            <Link
+              to="/proposals"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <span>Pending Proposals</span>
+            </Link>
             <Link to="/proposals">
               <div className="see-more">
                 <p>See More</p>
@@ -150,7 +161,7 @@ export default function Home() {
                     borderRadius: "50%",
                     width: "15px",
                     height: "15px",
-                    backgroundColor: "teal",
+                    backgroundColor: "#F07C37",
                   }}
                 />
               </div>

@@ -20,7 +20,7 @@ import MainListItems from "./main-list-items";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import "./dashboard.styles.scss";
-import { Bell, User, Menu as MenuIcon } from "react-feather";
+import { Menu as MenuIcon } from "react-feather";
 import bell from "../../assets/bell.svg";
 import user from "../../assets/user.svg";
 import logo from "../../assets/logo.png";

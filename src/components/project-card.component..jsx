@@ -75,7 +75,7 @@ export default function ProjectCard() {
         >
           <CardContent>
             <div className="project-header-row">
-              <h5>Project {data.projectCount}</h5>
+              <p>Project {data.projectCount}</p>
               {data.status === 'Delayed' ? (
                 <Chip
                   size="small"
@@ -129,7 +129,7 @@ export default function ProjectCard() {
               ) : null}
             </div>
             <div className="project-header-row">
-              <h5>Status</h5>
+              <p>Status</p>
               <Chip
                 style={{
                   borderRadius: '5px',
@@ -140,7 +140,7 @@ export default function ProjectCard() {
               />
             </div>
             <div className="project-header-col">
-              <h5>Completed so far</h5>
+              <p>Completed so far</p>
               <Stepper
                 activeStep={activeStep}
                 alternativeLabel
@@ -148,7 +148,7 @@ export default function ProjectCard() {
               >
                 {steps.map(label => (
                   <Step key={label}>
-                    <StepLabel style={{ fontSize: '0.5rem' }}>
+                    <StepLabel style={{ fontSize: '0.4rem' }}>
                       {label}
                     </StepLabel>
                   </Step>
@@ -156,10 +156,11 @@ export default function ProjectCard() {
               </Stepper>
             </div>
             <div className="project-header-row">
-              <h5>Sprint Demos</h5>
+              <p>Sprint Demos</p>
               <a
                 href={data.sprintLink}
                 target="_blank"
+                rel="noreferrer" 
                 style={{ textDecoration: 'none' }}
               >
                 {data.sprintDemoName}

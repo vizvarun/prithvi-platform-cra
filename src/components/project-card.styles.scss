@@ -3,6 +3,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .project-header-col {
@@ -14,7 +16,7 @@
 
 .stepper {
   padding: 10px !important;
-  min-width: 20vw !important;
+  min-width: 19vw !important;
 }
 
 .MuiStepIcon-root.MuiStepIcon-active {

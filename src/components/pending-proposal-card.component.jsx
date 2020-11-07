@@ -7,7 +7,8 @@ import Chip from "@material-ui/core/Chip";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: "30vw",
+    minWidth: "35vw",
+    height: "20vh",
     borderRadius: "10px",
     boxShadow: "0 2px 4px 0 rgba(0,0,0,.1)",
   },
@@ -53,15 +54,15 @@ export default function PendingProposalCard() {
           <CardContent>
             <div className="project-header-row">
               <div>
-                <h5>Proposer {data.proposerCount}</h5>
-                <h5>Problem Associated: Problem {data.problemCount}</h5>
+                <p>Proposer {data.proposerCount}</p>
+                <p>Problem Associated: Problem {data.problemCount}</p>
               </div>
               <div className="status-chip">
                 <p>Status</p>
                 <Chip
                   size="small"
                   label={data.status}
-                  style={{ backgroundColor: "teal", color: "white" }}
+                  style={{ backgroundColor: "#F07C37", color: "white" }}
                 />
               </div>
             </div>
