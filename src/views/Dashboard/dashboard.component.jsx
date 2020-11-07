@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -21,6 +22,7 @@ import Menu from "@material-ui/core/Menu";
 import "./dashboard.styles.scss";
 import { Bell, User, Menu as MenuIcon } from "react-feather";
 import logo from "../../assets/logo.png";
+import routes from "../../routes";
 
 function Copyright() {
   return (
@@ -244,7 +246,21 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             {/* Chart */}
             <Grid item xs={12} md={12} lg={12}>
-              <Paper className={fixedHeightPaper}>DUMMY TEXT</Paper>
+              <Paper className={fixedHeightPaper}>
+                <Switch>
+                  {routes.map((prop, key) => (
+                    <Route
+                      exact
+                      path={prop.path}
+                      component={prop.component}
+                      /*eslint-disable */
+                      key={key}
+                      /* eslint-enable */
+                    />
+                  ))}
+                  <Redirect to="/home" />
+                </Switch>
+              </Paper>
             </Grid>
           </Grid>
           <Box pt={4}>
