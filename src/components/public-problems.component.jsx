@@ -1,23 +1,23 @@
-import React from 'react';
-import './opportunities-card.styles.scss';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import PublicProblemsCard from './public-problems-card.component';
+import React from "react";
+import "./opportunities-card.styles.scss";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import PublicProblemsCard from "./public-problems-card.component";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
     borderRadius: 15,
-    boxShadow: '0px 1px 1px 1px rgba(0,0,0,.1)',
-    border: '1px solid rgba(0,0,0,0.15)',
+    boxShadow: "0px 1px 1px 1px rgba(0,0,0,.1)",
+    border: "1px solid rgba(0,0,0,0.15)",
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
   },
   title: {
     fontSize: 14,
@@ -35,11 +35,11 @@ export default function PublicProblems() {
       <Grid item xs={3}>
         <Card className={classes.root}>
           <CardContent className="filters-card">
-            <h5 className="hero-text">Filters</h5>
+            <p className="hero-text">Filters</p>
             <Button
               variant="contained"
               color="primary"
-              style={{ textTransform: 'none' }}
+              style={{ textTransform: "none" }}
             >
               Apply
             </Button>

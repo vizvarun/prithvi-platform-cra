@@ -58,7 +58,9 @@ const useStyles = makeStyles({
     boxShadow: "0px 1px 1px 1px rgba(0,0,0,.1)",
     border: "1px solid rgba(0,0,0,0.15)",
     alignItems: "center",
-    maxHeight: "fit-content",
+    justifyContent: "center",
+    maxHeight: 75,
+    padding: 10,
   },
 });
 
@@ -92,7 +94,10 @@ export default function Opportunities() {
                   display: "flex",
                   cursor: "pointer",
                   alignItems: "center",
-                  marginTop: "5px",
+                  justifyContent: "center",
+                  padding: 0,
+                  paddingLeft: 10,
+                  paddingRight: 10,
                 }}
               >
                 <AddCircleIcon

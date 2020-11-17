@@ -70,6 +70,7 @@ export default function PublicProblemsCard() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
+                marginBottom: 10,
               }}
             >
               <div
@@ -119,7 +120,7 @@ export default function PublicProblemsCard() {
                 fontWeight: "500",
                 lineHeight: "75%",
                 marginBottom: "10px",
-                marginTop: "10px",
+                marginTop: "30px",
               }}
             >
               Problem {data.problemCount}

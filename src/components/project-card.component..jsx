@@ -1,19 +1,20 @@
-import React from 'react';
-import './project-card.styles.scss';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Chip from '@material-ui/core/Chip';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
+import React from "react";
+import "./project-card.styles.scss";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Chip from "@material-ui/core/Chip";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
     borderRadius: 15,
-    boxShadow: '0 2px 4px 0 rgba(0,0,0,.1)',
+    boxShadow: "0 2px 4px 0 rgba(0,0,0,.1)",
+    minWidth: "fit-content",
   },
   title: {
     fontSize: 14,
@@ -24,36 +25,36 @@ const useStyles = makeStyles({
 });
 
 function getSteps() {
-  return ['Step 1', 'Step 2', 'Step 3', 'Step 4'];
+  return ["Step 1", "Step 2", "Step 3", "Step 4"];
 }
 
 const projectData = [
   {
     id: 0,
-    projectCount: '1',
-    daysLeft: '8 days left',
-    status: 'Delayed',
+    projectCount: "1",
+    daysLeft: "8 days left",
+    status: "Delayed",
     completed: 2,
-    sprintLink: 'https://lorem.com',
-    sprintDemoName: 'Sprint 2',
+    sprintLink: "https://lorem.com",
+    sprintDemoName: "Sprint 2",
   },
   {
     id: 1,
-    projectCount: '2',
-    daysLeft: '6 days left',
-    status: 'On Track',
+    projectCount: "2",
+    daysLeft: "6 days left",
+    status: "On Track",
     completed: 3,
-    sprintLink: 'https://lorem.com',
-    sprintDemoName: 'Sprint 3',
+    sprintLink: "https://lorem.com",
+    sprintDemoName: "Sprint 3",
   },
   {
     id: 2,
-    projectCount: '3',
-    daysLeft: '11 days left',
-    status: 'On Hold',
+    projectCount: "3",
+    daysLeft: "11 days left",
+    status: "On Hold",
     completed: 1,
-    sprintLink: 'https://lorem.com',
-    sprintDemoName: 'Sprint 1',
+    sprintLink: "https://lorem.com",
+    sprintDemoName: "Sprint 1",
   },
 ];
 
@@ -66,64 +67,64 @@ export default function ProjectCard() {
   const steps = getSteps();
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto' }}>
-      {projectData.map(data => (
+    <div style={{ display: "grid", gridTemplateColumns: "auto auto auto" }}>
+      {projectData.map((data) => (
         <Card
           className={classes.root}
           variant="outlined"
-          style={{ marginRight: '40px', marginBottom: '25px' }}
+          style={{ marginRight: "40px", marginBottom: "25px" }}
         >
           <CardContent>
             <div className="project-header-row">
               <p>Project {data.projectCount}</p>
-              {data.status === 'Delayed' ? (
+              {data.status === "Delayed" ? (
                 <Chip
                   size="small"
                   icon={
                     <AccessTimeIcon
-                      style={{ color: 'white', width: '15px', height: '15px' }}
+                      style={{ color: "white", width: "15px", height: "15px" }}
                     />
                   }
                   label={data.daysLeft}
                   onClick={handleClick}
                   style={{
-                    color: 'white',
-                    borderRadius: '5px',
-                    backgroundColor: 'red',
+                    color: "white",
+                    borderRadius: "5px",
+                    backgroundColor: "red",
                   }}
                 />
               ) : null}
-              {data.status === 'On Track' ? (
+              {data.status === "On Track" ? (
                 <Chip
                   size="small"
                   icon={
                     <AccessTimeIcon
-                      style={{ color: 'white', width: '15px', height: '15px' }}
+                      style={{ color: "white", width: "15px", height: "15px" }}
                     />
                   }
                   label={data.daysLeft}
                   onClick={handleClick}
                   style={{
-                    color: 'white',
-                    borderRadius: '5px',
-                    backgroundColor: 'teal',
+                    color: "white",
+                    borderRadius: "5px",
+                    backgroundColor: "teal",
                   }}
                 />
               ) : null}
-              {data.status === 'On Hold' ? (
+              {data.status === "On Hold" ? (
                 <Chip
                   size="small"
                   icon={
                     <AccessTimeIcon
-                      style={{ color: 'white', width: '15px', height: '15px' }}
+                      style={{ color: "white", width: "15px", height: "15px" }}
                     />
                   }
                   label={data.daysLeft}
                   onClick={handleClick}
                   style={{
-                    color: 'white',
-                    borderRadius: '5px',
-                    backgroundColor: '#f9a602',
+                    color: "white",
+                    borderRadius: "5px",
+                    backgroundColor: "#f9a602",
                   }}
                 />
               ) : null}
@@ -132,7 +133,7 @@ export default function ProjectCard() {
               <p>Status</p>
               <Chip
                 style={{
-                  borderRadius: '5px',
+                  borderRadius: "5px",
                 }}
                 size="small"
                 label={data.status}
@@ -146,9 +147,9 @@ export default function ProjectCard() {
                 alternativeLabel
                 className="stepper"
               >
-                {steps.map(label => (
+                {steps.map((label) => (
                   <Step key={label}>
-                    <StepLabel style={{ fontSize: '0.4rem' }}>
+                    <StepLabel style={{ fontSize: "0.4rem" }}>
                       {label}
                     </StepLabel>
                   </Step>
@@ -160,8 +161,8 @@ export default function ProjectCard() {
               <a
                 href={data.sprintLink}
                 target="_blank"
-                rel="noreferrer" 
-                style={{ textDecoration: 'none' }}
+                rel="noreferrer"
+                style={{ textDecoration: "none" }}
               >
                 {data.sprintDemoName}
               </a>

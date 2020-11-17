@@ -16,11 +16,14 @@
 
 .stepper {
   padding: 10px !important;
-  min-width: 19vw !important;
+  width: 20vw;
+  @media (min-width: 1920px) {
+    width: 16vw;
+  }
 }
 
 .MuiStepIcon-root.MuiStepIcon-active {
-  color: #F07C37 !important;
+  color: #f07c37 !important;
 }
 
 .status-chip {

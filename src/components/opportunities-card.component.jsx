@@ -25,17 +25,17 @@ const item = [
   {
     id: 0,
     problemCount: "1",
-    desc: "lorem ipsum dolor sit",
+    desc: "AI based hybrid  search engine",
   },
   {
     id: 1,
     problemCount: "2",
-    desc: "lorem ipsum dolor sit",
+    desc: "The one stop fitness app",
   },
   {
     id: 2,
     problemCount: "3",
-    desc: "lorem ipsum dolor sit",
+    desc: "Startup Accelerator Software",
   },
 ];
 
